@@ -1,3 +1,7 @@
+/*
+By Yevgeniy Sumaryev
+3/20/21
+*/
 #include <iostream>
 #include <math.h>
 #include <cstdlib>
@@ -19,6 +23,8 @@ void swap(int *xp, int *yp){
     *yp = temp;
 }
 
+//this notation allows us to pass
+//2D array into a function
 template <size_t rows, size_t cols>
 void insertionSort2D(int (&arr)[rows][cols]){
 
@@ -137,10 +143,12 @@ void insertionSort2D(int (&arr)[rows][cols]){
     } 
 }
 
-
+//this notation allows us to pass
+//2D array into a function
 template <size_t rows, size_t cols>
 void selectionSort2D(int (&arr)[rows][cols]){
     
+    cout <<"selectionSort2D is called \n";
     int remainderRow, remainderCol;
     int startRow, startCol;
     int total = rows*cols;
@@ -196,6 +204,8 @@ void selectionSort2D(int (&arr)[rows][cols]){
 
 }
 
+//this notation allows us to pass
+//2D array into a function
 template <size_t rows, size_t cols>
 void bubbleSort2d(int (&arr)[rows][cols]){
     cout <<"bubblesort2D is called \n";
@@ -309,11 +319,48 @@ int main() {
     }
     cout << endl;
 
+    selectionSort2D(arr);
 
-   // selectionSort2D(arr);
-  //  bubbleSort2d(arr);
-  insertionSort2D(arr);
+    //print the matrix 
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++)
+        {
+           cout <<  arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
 
+    //randomize the matrix again
+    for (int i = 0; i < row; i++)
+        for (int j = 0; j < col; j++)
+        {
+            arr[i][j] = rand() % 100 + 1;
+           // arr[i][j] = totalNums--;
+        }
+   
+   
+    bubbleSort2d(arr);
+    
+    //print the matrix 
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++)
+        {
+           cout <<  arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+    
+    //randomize the matrix 
+    for (int i = 0; i < row; i++)
+        for (int j = 0; j < col; j++)
+        {
+            arr[i][j] = rand() % 100 + 1;
+           // arr[i][j] = totalNums--;
+        }
+    
+    insertionSort2D(arr);
 
     //print the matrix 
     for (int i = 0; i < row; i++) {
@@ -327,3 +374,4 @@ int main() {
 
     return 0;
 }
+

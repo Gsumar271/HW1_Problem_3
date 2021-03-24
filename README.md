@@ -1,4 +1,6 @@
 # HW1_Problem_3
+By Yevgeniy Sumaryev
+
 In this problem we had to implement insertionSort, selectionSort and bubbleSort for a 2D matrix, 
 which was challenging since we had to take into account the array wasn’t linear and we needed to manipulate and 
 traverse the array along the 2d structure and keep track of the location as to not go beyond limits of the array. 
@@ -29,4 +31,6 @@ for insertionSort
  or the first row of the matrix or any other row. In order to properly move each element we had to calculate row and column
  and make sure we don’t go over the borders of the matrix. 
 
+ Also I used a special notation for each sort function in order to be able to pass in a 2D array, otherwise compiler was complaining and didn’t
+allow me to do that 
 
